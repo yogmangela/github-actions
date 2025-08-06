@@ -1,17 +1,18 @@
 on:
   push:
     branches:
-      - main
+      - main 
+      - github-action
   pull_request:
     branches:
       - main
-      
+      - github-action
 jobs:
   my-job:
     runs-on: self-hosted
-    name: A job to say hello
+    name: job1 - Hello world action step
     steps:
-      - name: Hello world action step
+      - name: Step1 - Hello world action step
         id: hello
         uses: omenking/barsoom@0.0.6
         with:
@@ -20,4 +21,5 @@ jobs:
       - name: Get the Output
 
         run: echo "The time was ${{ steps.hello.outputs.greeting }}"
+
 
