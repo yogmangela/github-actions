@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   my-job:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: A job to say hello
     steps:
       - name: Hello world action step
@@ -12,4 +12,5 @@ jobs:
           name: 'Brown'
       # Use the output from the `hello` step
       - name: Get the Output
+
         run: echo "The time was ${{ steps.hello.outputs.greeting }}"
