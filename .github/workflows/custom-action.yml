@@ -1,5 +1,11 @@
-on: [push]
-
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      
 jobs:
   my-job:
     runs-on: self-hosted
@@ -9,8 +15,9 @@ jobs:
         id: hello
         uses: omenking/barsoom@0.0.6
         with:
-          name: 'Brown'
+          name: 'yog'
       # Use the output from the `hello` step
       - name: Get the Output
 
         run: echo "The time was ${{ steps.hello.outputs.greeting }}"
+
